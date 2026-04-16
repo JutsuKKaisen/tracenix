@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Building2 } from "lucide-react";
 
 import { useAuth } from "@/components/providers/auth-provider";
 import { ApiError } from "@/lib/api/client";
@@ -13,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { BrandLogo } from "@/components/brand/brand-logo";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -61,7 +61,7 @@ export default function LoginPage() {
       <div className="relative z-10 w-full max-w-md p-4">
         <div className="flex flex-col items-center mb-8">
           <div className="bg-primary/20 p-3 rounded-xl mb-4 backdrop-blur-md border border-primary/30">
-            <Building2 className="w-8 h-8 text-white" />
+            <BrandLogo size={32} priority />
           </div>
           <h1 className="text-3xl font-heading font-bold text-white tracking-tight">Tracenix</h1>
           <p className="text-slate-400 mt-2 text-center text-sm">Nền tảng điều phối hồ sơ và tuân thủ doanh nghiệp</p>

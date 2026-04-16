@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
-  Building2, 
   LayoutDashboard, 
   FolderOpen, 
   FileText, 
@@ -27,6 +26,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { BrandLogo } from "@/components/brand/brand-logo";
 
 const NAV_ITEMS = [
   { title: "Tổng quan", url: "/dashboard", icon: LayoutDashboard },
@@ -47,7 +47,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props} className="bg-sidebar border-sidebar-border">
       <SidebarHeader className="border-b border-sidebar-border h-14 flex flex-row items-center px-4">
-        <Building2 className="w-6 h-6 text-primary flex-shrink-0" />
+        <BrandLogo size={24} />
         {state !== "collapsed" && (
           <span className="font-heading font-bold text-lg ml-3 tracking-tight text-sidebar-foreground">
             Tracenix
@@ -75,7 +75,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="p-4 border-t border-sidebar-border text-xs text-muted-foreground flex items-center justify-center">
-        {state !== "collapsed" ? "Tracenix MVP phiên bản 1.0" : "v1"}
+        {state !== "collapsed" ? "Tracenix 1.0" : "v1"}
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

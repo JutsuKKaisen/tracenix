@@ -17,6 +17,11 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Tracenix | Điều phối hồ sơ và tuân thủ doanh nghiệp",
   description: "Nền tảng SaaS quản lý luồng hồ sơ, phê duyệt và vận hành dự án cho doanh nghiệp.",
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({

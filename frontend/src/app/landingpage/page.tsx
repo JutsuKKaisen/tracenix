@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import {
   ArrowRight,
-  Building2,
   CheckCircle2,
   ClipboardCheck,
   FileCheck2,
@@ -18,6 +17,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { TracenixGlobe } from "@/components/ui/tracenix-globe";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/components/brand/brand-logo";
 
 const heroBullets = [
   "Lưu trữ hồ sơ tập trung",
@@ -125,7 +125,7 @@ export default function LandingPage() {
           <header className="mb-10 flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 backdrop-blur md:px-6">
             <div className="flex items-center gap-3">
               <span className="rounded-lg bg-blue-500/15 p-2 text-blue-300">
-                <Building2 className="h-5 w-5" />
+                <BrandLogo size={20} />
               </span>
               <div>
                 <p className="font-heading text-lg leading-tight">Tracenix</p>
