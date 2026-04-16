@@ -18,7 +18,7 @@ import {
   WorkflowAction,
 } from "@/types";
 
-const DEFAULT_API_BASE_URL = "http://localhost:8000";
+const DEFAULT_API_BASE_URL = "/api";
 
 type HttpMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
 
@@ -47,7 +47,13 @@ export function getApiBaseUrl(): string {
 
 function buildUrl(path: string, query?: RequestOptions["query"]): string {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  const url = new URL(`${getApiBaseUrl()}${normalizedPath}`);
+  const baseUrl = getApiBaseUrl();
+  const resolvedBaseUrl = /^https?:\/\//.test(baseUrl)
+    ? baseUrl
+    : typeof window !== "undefined"
+      ? `${window.location.origin}${baseUrl}`
+      : `http://localhost${baseUrl}`;
+  const url = new URL(`${resolvedBaseUrl}${normalizedPath}`);
   if (query) {
     for (const [key, value] of Object.entries(query)) {
       if (value === null || value === undefined || value === "") {
